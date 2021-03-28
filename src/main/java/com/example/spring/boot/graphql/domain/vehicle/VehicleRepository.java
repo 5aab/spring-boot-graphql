@@ -16,6 +16,6 @@ import static org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE;
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
 
     @QueryHints(@QueryHint(name = HINT_FETCH_SIZE, value = "1000"))
-    @Query("select new com.example.spring.boot.graphql.domain.composite.CompositeOutputVO(v.id,v.type,v.modelCode,v.brandName,v.launchDate,i.insuredBy,i.insuredOn) from Vehicle v, Insurance i where v.id=i.id and brandName= :brandName")
+    @Query("select new com.example.spring.boot.graphql.domain.composite.CompositeOutputVO(v.id,v.type,v.modelCode,v.brandName,v.launchDate,i.insuredBy,i.insuredOn) from Vehicle v, Insurance i where v.id=i.id and v.brandName= :brandName")
     Set<CompositeOutputVO> findAllComposites(@Param("brandName") String brandName);
 }

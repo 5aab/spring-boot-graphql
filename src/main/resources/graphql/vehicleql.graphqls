@@ -6,9 +6,20 @@ brandName: String,
 launchDate: String
 }
 
+type CompositeOutputVO {
+id: ID!,
+type: String,
+modelCode: String,
+brandName: String,
+launchDate: String,
+insuredBy: String,
+insuredOn: String
+}
+
 type Query {
 vehicles(count: Int):[Vehicle]
 vehicle(id: ID):Vehicle
+composites(brandName: String):[CompositeOutputVO]
 }
 
 type Mutation {

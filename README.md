@@ -29,3 +29,27 @@ composites(brandName: "Ferrari") {
 brandName
 }
 }
+
+query CompositesWithVariables($args: [String]) {
+compositeWithArgs(brandNames: $args) {
+brandName
+type
+id
+}
+}
+{
+"args": ["Chevrolet"]
+}
+
+query CompositesWithVariables($args: [QueryArgument]) {
+compositeWithQueryArguments(queryArguments: $args) {
+brandName
+type
+id
+}
+}
+{
+"columnName": "brandName",
+"operator": "equal",
+"value": "Ferrari"
+}

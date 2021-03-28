@@ -16,11 +16,18 @@ insuredBy: String,
 insuredOn: String
 }
 
+input QueryArgument {
+columnName: String!
+operator: String!
+value: String!
+}
+
 type Query {
 vehicles(count: Int):[Vehicle]
 vehicle(id: ID):Vehicle
 composites(brandName: String):[CompositeOutputVO]
 compositeWithArgs(brandNames: [String]):[CompositeOutputVO]
+compositeWithQueryArguments(queryArguments: [QueryArgument]):[CompositeOutputVO]
 }
 
 type Mutation {

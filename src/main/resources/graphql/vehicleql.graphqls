@@ -20,6 +20,7 @@ type Query {
 vehicles(count: Int):[Vehicle]
 vehicle(id: ID):Vehicle
 composites(brandName: String):[CompositeOutputVO]
+compositeWithArgs(brandNames: [String]):[CompositeOutputVO]
 }
 
 type Mutation {

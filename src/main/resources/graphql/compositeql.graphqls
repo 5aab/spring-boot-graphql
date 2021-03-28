@@ -9,5 +9,5 @@ insuredOn: String
 }
 
 type Query {
-composits(brandName: String):[CompositeOutputVO]
+composites(brandName: String):[CompositeOutputVO]
 }

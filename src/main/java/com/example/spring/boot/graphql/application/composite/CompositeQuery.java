@@ -5,7 +5,7 @@ import com.example.spring.boot.graphql.domain.composite.CompositeOutputVO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -13,7 +13,7 @@ public class CompositeQuery implements GraphQLQueryResolver {
 
     private CompositeService compositeService;
 
-    public Set<CompositeOutputVO> getComposits(final String brandName) {
+    public List<CompositeOutputVO> getComposites(final String brandName) {
         return this.compositeService.getAllComposites(brandName);
     }
 

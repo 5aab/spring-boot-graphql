@@ -6,9 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.toList;
 
 @Service
 @AllArgsConstructor
@@ -17,8 +17,8 @@ public class CompositeService {
     private final VehicleRepository vehicleRepository;
 
     @Transactional(readOnly = true)
-    public Set<CompositeOutputVO> getAllComposites(final String brandName) {
-        return vehicleRepository.findAllComposites(brandName).stream().collect(toSet());
+    public List<CompositeOutputVO> getAllComposites(final String brandName) {
+        return vehicleRepository.findAllComposites(brandName).stream().collect(toList());
     }
 
 }

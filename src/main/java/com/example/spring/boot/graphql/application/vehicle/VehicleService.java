@@ -1,7 +1,8 @@
-package com.example.spring.boot.graphql.application;
+package com.example.spring.boot.graphql.application.vehicle;
 
-import com.example.spring.boot.graphql.domain.Vehicle;
-import com.example.spring.boot.graphql.domain.VehicleRepository;
+import com.example.spring.boot.graphql.domain.vehicle.Vehicle;
+import com.example.spring.boot.graphql.domain.vehicle.VehicleRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,13 +12,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class VehicleService {
 
     private final VehicleRepository vehicleRepository ;
-
-    public VehicleService(final VehicleRepository vehicleRepository) {
-        this.vehicleRepository = vehicleRepository ;
-    }
 
     @Transactional
     public Vehicle createVehicle(final String type, final String modelCode, final String brandName, final String launchDate) {
@@ -38,4 +36,6 @@ public class VehicleService {
     public Optional<Vehicle> getVehicle(final int id) {
         return this.vehicleRepository.findById(id);
     }
+
+
 }

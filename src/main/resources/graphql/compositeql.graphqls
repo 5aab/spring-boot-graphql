@@ -1,0 +1,13 @@
+type CompositeOutputVO {
+id: ID!,
+type: String,
+modelCode: String,
+brandName: String,
+launchDate: String,
+insuredBy: String,
+insuredOn: String
+}
+
+type Query {
+composits(brandName: String):[CompositeOutputVO]
+}

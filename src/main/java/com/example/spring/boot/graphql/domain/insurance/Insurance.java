@@ -1,4 +1,4 @@
-package com.example.spring.boot.graphql.domain;
+package com.example.spring.boot.graphql.domain.insurance;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @EqualsAndHashCode
 @Entity
-public class Vehicle implements Serializable {
+public class Insurance implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,19 +22,10 @@ public class Vehicle implements Serializable {
     @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "model_code", nullable = false)
-    private String modelCode;
+    private String insuredBy;
 
-    @Column(name = "brand_name")
-    private String brandName;
-
-    @Column(name = "launch_date")
-    private LocalDate launchDate;
+    private LocalDate insuredOn;
 
     private transient  String formattedDate;
 
-    // Getter and setter
-    public String getFormattedDate() {
-        return getLaunchDate().toString();
-    }
 }

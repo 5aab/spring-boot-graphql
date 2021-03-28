@@ -1,11 +1,9 @@
-package com.example.spring.boot.graphql.domain;
+package com.example.spring.boot.graphql.application.vehicle;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import com.example.spring.boot.graphql.application.VehicleService;
+import com.example.spring.boot.graphql.domain.vehicle.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 @Component
 public class VehicleMutation implements GraphQLMutationResolver {
